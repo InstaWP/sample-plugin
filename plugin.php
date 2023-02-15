@@ -7,10 +7,10 @@
  * @version       1.0.4
  *
  * @wordpress-plugin
- * Plugin Name:   InstaWP Sample Plugin
+ * Plugin Name:   InstaWP Dark Plugin
  * Plugin URI:    https://instawp.com
  * Description:   InstaWP Git Deployment testing
- * Version:       1.0.13
+ * Version:       1.2
  * Author:        Vikas
  * Author URI:    https://instawp.com
  * Text Domain:   instawp-sample-plugin
@@ -21,3 +21,7 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 // Include your custom code here.
+function black_theme_scripts() {
+    wp_enqueue_style( 'black-theme', plugins_url( 'black-theme.css', __FILE__ ) );
+}
+add_action( 'wp_enqueue_scripts', 'black_theme_scripts' );
